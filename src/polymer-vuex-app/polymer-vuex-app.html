@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="polymer-vuex-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[message]]!</h2>
+    <button on-click="incrementMutation">Increment Count</button>
+    <p>X is: [[x]]</p>
+    <p>Count is: [[count]]</p>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PolymerVuexApp extends Polymer.Element {
+      static get is() { return 'polymer-vuex-app'; }
+      static get properties() {
+        return {
+          message: {
+            type: String,
+            value: 'Hello from Polymer'
+          },
+          x: {
+            type: Number,
+            value: () => 0
+          },
+          count: {
+            type: Number,
+            computed: 'getCount(x)'
+          }
+        };
+      }
+      getCount() {
+        if (!window.vm) return 0
+        return window.vm.$store.state.count
+      }
+      incrementMutation() {
+        window.vm.$store.commit('addOne')
+      }
+      incrementX() {
+        this.set('x', this.x + 1)
+      }
+      ready() {
+        super.ready()
+        window.addEventListener('vuex-addOne', this.incrementX.bind(this))
+      }
+    }
+
+    window.customElements.define(PolymerVuexApp.is, PolymerVuexApp);
+  </script>
+</dom-module>
