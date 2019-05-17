@@ -1,6 +1,9 @@
 # \<polymer-vuex\>
 
 
+## Demo
+[Polymer Vuex](https://polymer-vuex.netlify.com)
+
 
 ## Install the Polymer-CLI
 
