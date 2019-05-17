@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   store.subscribe((mutation, state) => {
     window.dispatchEvent(new Event(`vuex-${mutation.type}`));
   });
+  Vue.config.devtools = true;
   let vm = new Vue({
     el: '#vue-app',
     data: {
