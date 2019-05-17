@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymer-vuex</title>
+    <meta name="description" content="polymer-vuex description">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3.1.1/dist/vuex.min.js"></script>
+    <link rel="import" href="/src/polymer-vuex-app/polymer-vuex-app.html">
+  </head>
+  <body>
+    <polymer-vuex-app></polymer-vuex-app>
+    <hr>
+    <div id="vue-app">
+      <h1>{{initialText}}</h1>
+      <p>{{message}}</p>
+      <p>Count is: {{count}}</p>
+      <button @click="$store.commit('addOne')">Add One</button>
+    </div>
+
+    <script src="/main.js"></script>
+  
+
+</body></html>

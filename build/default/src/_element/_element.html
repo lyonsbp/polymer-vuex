@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="polymer-vuex-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>/**
+ * @customElement
+ * @polymer
+ */
+class PolymerVuexApp extends Polymer.Element {
+  static get is() {
+    return 'polymer-vuex-app';
+  }
+
+  static get properties() {
+    return {
+      prop1: {
+        type: String,
+        value: 'polymer-vuex-app'
+      }
+    };
+  }
+
+}
+
+window.customElements.define(PolymerVuexApp.is, PolymerVuexApp);</script>
+</dom-module>
